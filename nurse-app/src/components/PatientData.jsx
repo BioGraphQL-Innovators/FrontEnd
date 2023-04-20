@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { Link, useNavigate  } from 'react-router-dom';
-import { Table, Button, Alert  } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
+import { Table, Button, Alert } from 'react-bootstrap';
 import { GET_PATIENTS, DELETE_PATIENT } from '../graphql/queries';
-
-
 
 const PatientData = () => {
   const [query, setQuery] = useState('');
   const { data, error, refetch } = useQuery(GET_PATIENTS);
-  const [addPatient] = useMutation(CREATE_PATIENT);
-  const [updatePatient] = useMutation(UPDATE_PATIENT);
+  //   const [addPatient] = useMutation(CREATE_PATIENT);
+  //   const [updatePatient] = useMutation(UPDATE_PATIENT);
   const [deletePatient] = useMutation(DELETE_PATIENT);
   const navigate = useNavigate();
 
