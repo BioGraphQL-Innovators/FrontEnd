@@ -16,6 +16,22 @@ export const GET_PATIENTS = gql`
   }
 `;
 
+export const GET_PATIENT = gql`
+  query GetPatient($id: ID!) {
+    getPatient(id: $id) {
+      id
+      firstName
+      lastName
+      age
+      birthdate
+      gender
+      address
+      mobile
+      email
+    }
+  }
+`;
+
 export const CREATE_PATIENT = gql`
   mutation CreatePatient($input: PatientInput!) {
     createPatient(input: $input) {

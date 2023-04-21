@@ -9,6 +9,8 @@ import Home from './components/Home';
 import Vitals from './components/Vitals';
 import Motivate from './components/Motivate';
 import Checkup from './components/Checkup';
+import AddPatient from './components/AddPatient';
+import UpdatePatient from './components/UpdatePatient';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -82,6 +84,8 @@ function App() {
           <Route path='/vitals' element={<Vitals />} />
           <Route path='/motivate' element={<Motivate />} />
           <Route path='/checkup' element={<Checkup />} />
+          <Route path='/add' element={<AddPatient />} />
+          <Route path='/update/:id' element={<UpdatePatient />} />
         </Routes>
       </div>
     </BrowserRouter>

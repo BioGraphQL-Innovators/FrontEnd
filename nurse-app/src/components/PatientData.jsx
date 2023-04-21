@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { Link, useNavigate } from 'react-router-dom';
 import { Table, Button, Alert } from 'react-bootstrap';
-import { GET_PATIENTS, DELETE_PATIENT } from '../graphlql/queries';
+import { GET_PATIENTS, DELETE_PATIENT } from '../graphqls/queries';
 
 const PatientData = () => {
   const [query, setQuery] = useState('');

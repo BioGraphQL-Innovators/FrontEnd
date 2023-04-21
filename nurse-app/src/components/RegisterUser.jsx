@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-import { REGISTER_USER } from '../graphlql/mutations';
+import { REGISTER_USER } from '../graphqls/mutations';
 import {
   Container,
   Form,
