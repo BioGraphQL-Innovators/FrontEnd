@@ -10,7 +10,7 @@ import {
   Dropdown,
   Alert,
 } from 'react-bootstrap';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; // Import PropTypes
 
 const RegisterUser = ({ onRegister }) => {
   const navigate = useNavigate();

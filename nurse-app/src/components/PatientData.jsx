@@ -7,8 +7,8 @@ import { GET_PATIENTS, DELETE_PATIENT } from '../graphql/queries';
 const PatientData = () => {
   const [query, setQuery] = useState('');
   const { data, error, refetch } = useQuery(GET_PATIENTS);
-  //   const [addPatient] = useMutation(CREATE_PATIENT);
-  //   const [updatePatient] = useMutation(UPDATE_PATIENT);
+  const [addPatient] = useMutation(CREATE_PATIENT);
+  const [updatePatient] = useMutation(UPDATE_PATIENT);
   const [deletePatient] = useMutation(DELETE_PATIENT);
   const navigate = useNavigate();
 
