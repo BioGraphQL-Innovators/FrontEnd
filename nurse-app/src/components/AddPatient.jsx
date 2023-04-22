@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { CREATE_PATIENT, GET_PATIENTS } from '../graphqls/queries';
 
 const AddPatient = () => {
-  const navigate = useNavigate();
+  const history = useHistory();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -40,7 +40,7 @@ const AddPatient = () => {
 
     try {
       await createPatient({ variables: { input: formData } });
-      navigate('/patientdata');
+      history.push('/patientdata');
     } catch (err) {
       // Handle any errors
       console.error('Error while adding patient:', err);

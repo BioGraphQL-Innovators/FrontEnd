@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { GET_PATIENT, UPDATE_PATIENT } from '../graphqls/queries';
@@ -25,7 +25,7 @@ const UpdatePatient = () => {
     variables: { id },
   });
   const [updatePatient] = useMutation(UPDATE_PATIENT);
-  const navigate = useNavigate();
+  const history = useHistory();
 
   useEffect(() => {
     if (data && data.getPatient) {
@@ -39,21 +39,20 @@ const UpdatePatient = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const input = {
       ...formData,
       id: undefined, // Also remove the 'id' field from the input object
     };
     delete input.__typename;
-  
+
     try {
       await updatePatient({ variables: { id, input } });
-      navigate('/patientdata');
+      history.push('/patientdata');
     } catch (err) {
       setError(err.message);
     }
   };
-  
 
   if (loading) return <div>Loading...</div>;
   if (queryError) return <Alert variant='danger'>Error fetching data</Alert>;

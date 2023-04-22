@@ -5,7 +5,7 @@ import { Container, Image } from 'react-bootstrap';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 // import { Table, Button, Alert } from 'react-bootstrap';
-function CovidCheck() {
+function Game() {
   const history = useHistory();
 
   useEffect(() => {
@@ -26,4 +26,4 @@ function CovidCheck() {
   );
 }
 
-export default CovidCheck;
+export default Game;
