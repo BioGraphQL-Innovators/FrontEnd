@@ -1,7 +1,7 @@
 import React from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
-function UnityComponent() {
+function Game() {
   const { unityProvider } = useUnityContext({
     loaderUrl: "build/FitnessGame.loader.js",
     dataUrl: "build/webgl.data",
@@ -14,4 +14,4 @@ function UnityComponent() {
   );
 }
 
-export default UnityComponent;
+export default Game;
