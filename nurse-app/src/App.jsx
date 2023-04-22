@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Vitals from './components/Vitals';
 import Motivate from './components/Motivate';
 import Checkup from './components/Checkup';
+import Game from './components/Game';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -46,6 +47,9 @@ function App() {
             <Nav.Link as={Link} to='/checkup'>
               Checkup
             </Nav.Link>
+            <Nav.Link as={Link} to='/game'>
+              Game
+            </Nav.Link>
             {isLoggedIn ? (
               <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
             ) : (
@@ -82,6 +86,7 @@ function App() {
           <Route path='/vitals' element={<Vitals />} />
           <Route path='/motivate' element={<Motivate />} />
           <Route path='/checkup' element={<Checkup />} />
+          <Route path='/game' element={<Game />} />
         </Routes>
       </div>
     </BrowserRouter>
